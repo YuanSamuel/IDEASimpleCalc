@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 	Button button0, button1, button2, button3, button4, button5, button6, button7, button8, button9, buttonplus, buttonminus, buttontimes, buttondivide, buttonequals;
 
 	// TODO: Declare two TextViews named "equation" and "answer"
-
+	TextView equation, answer;
 
 	//This is the onCreate() method. Each time an activity is created, the following code is run.
 	@Override
@@ -35,7 +35,10 @@ public class MainActivity extends AppCompatActivity {
 		Use findViewById() to declare the TextViews
 		We need to use the .setText() method of a TextView to set the initial text to nothing ("")
 		 */
-
+		equation = findViewById(R.id.equation);
+		answer = findViewById(R.id.answer);
+		equation.setText("");
+		answer.setText("");
 		//The following 2 lines calls the methods that are declared below
 		setButtons();
 		setOnClicks();
@@ -74,8 +77,7 @@ public class MainActivity extends AppCompatActivity {
 	void setOnClicks() {
 		button0.setOnClickListener(new View.OnClickListener() {
 			@Override
-			public void onClick(View view) {
-				equation.append("0");
+			public void onClick(View view) { equation.append("0");
 			}
 		});
 		button1.setOnClickListener(new View.OnClickListener() {
@@ -94,6 +96,42 @@ public class MainActivity extends AppCompatActivity {
 			@Override
 			public void onClick(View view) {
 				equation.append("3");
+			}
+		});
+		button4.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				equation.append("4");
+			}
+		});
+		button5.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				equation.append("5");
+			}
+		});
+		button6.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				equation.append("6");
+			}
+		});
+		button7.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				equation.append("7");
+			}
+		});
+		button8.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				equation.append("8");
+			}
+		});
+		button9.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				equation.append("9");
 			}
 		});
 
@@ -127,7 +165,26 @@ public class MainActivity extends AppCompatActivity {
 				buttondivide.setEnabled(false);
 			}
 		});
-
+		buttondivide.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				equation.append("/");
+				buttonplus.setEnabled(false);
+				buttonminus.setEnabled(false);
+				buttontimes.setEnabled(false);
+				buttondivide.setEnabled(false);
+			}
+		});
+		buttontimes.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				equation.append("*");
+				buttonplus.setEnabled(false);
+				buttonminus.setEnabled(false);
+				buttontimes.setEnabled(false);
+				buttondivide.setEnabled(false);
+			}
+		});
 		//TODO: Add onClickListeneers for all of the symbol buttons you just added (* and /)
 
 		buttonequals.setOnClickListener(new View.OnClickListener() {
@@ -138,7 +195,12 @@ public class MainActivity extends AppCompatActivity {
 				String compute = findAnswer(equation.getText().toString());
 
 				//TODO: Set the answer TextView to the compute variable defined above and clear the equation TextView
-
+				answer.setText(compute);
+				equation.setText("");
+				buttonplus.setEnabled(true);
+				buttonminus.setEnabled(true);
+				buttontimes.setEnabled(true);
+				buttondivide.setEnabled(true);
 				//TODO: Re-enable all of the operator buttons
 			}
 		});

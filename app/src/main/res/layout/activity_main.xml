@@ -28,26 +28,29 @@
 		android:id="@+id/button9"
 		android:layout_width="68dp"
 		android:layout_height="53dp"
+		android:layout_marginStart="16dp"
 		android:text="9"
 		app:layout_constraintBaseline_toBaselineOf="@+id/button7"
-		tools:layout_editor_absoluteX="184dp" />
+		app:layout_constraintStart_toEndOf="@+id/button8" />
 
 	<Button
 		android:id="@+id/button8"
 		android:layout_width="68dp"
 		android:layout_height="53dp"
+		android:layout_marginStart="16dp"
 		android:text="8"
 		app:layout_constraintBaseline_toBaselineOf="@+id/button7"
-		tools:layout_editor_absoluteX="100dp" />
+		app:layout_constraintStart_toEndOf="@+id/button7" />
 
 	<Button
 		android:id="@+id/button7"
 		android:layout_width="68dp"
 		android:layout_height="53dp"
+		android:layout_marginStart="16dp"
 		android:layout_marginBottom="16dp"
 		android:text="7"
 		app:layout_constraintBottom_toTopOf="@+id/button4"
-		tools:layout_editor_absoluteX="16dp" />
+		app:layout_constraintStart_toStartOf="parent" />
 
 	<Button
 		android:id="@+id/button4"
