@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
 import java.math.BigDecimal;
 
@@ -51,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
 		button3 = findViewById(R.id.button3);
 		button4 = findViewById(R.id.button4);
 		button5 = findViewById(R.id.button5);
-		button6 = findViewById(R.id.button6);
+		button6 = findViewById(R.id.button4);
 		button7 = findViewById(R.id.button7);
 		button8 = findViewById(R.id.button8);
 		button9 = findViewById(R.id.button9);
